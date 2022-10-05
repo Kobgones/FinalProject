@@ -1,3 +1,20 @@
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+// Get the navbar
+const navbar = document.getElementById("navbar");
+// Get the offset position of the navbar
+const sticky = navbar.offsetTop;
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+//---------------------
+
 let slidePosition = 0;
 const slides = document.getElementsByClassName('card');
 const totalSlides = slides.length;
@@ -41,15 +58,8 @@ document.
 
 
     // ------------------------------
-    let gandalf = document.getElementsByClassName("click-me");
-    let audio = new Audio('./sons/Gandalf.mov');
     
-    gandalf.addEventListener("click", () => {
-        audio.play();
-    });
 
-
-    // ---------------------------------
 
     
     // ---------------------------------
@@ -272,4 +282,13 @@ class Carousel {
   if (document.readyState !== 'loading') {
     onReady()
   }
-  document.addEventListener('DOMContentLoaded', onReady)
+  document.addEventListener('DOMContentLoaded', onReady);
+
+//-----------------------------------
+
+  let gandalf = document.getElementById("audio1");
+    let audio = new Audio('./sons/Gandalf.mov');
+    
+    gandalf.addEventListener("click", () => {
+        audio.play();
+    });
