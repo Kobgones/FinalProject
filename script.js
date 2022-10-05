@@ -41,12 +41,18 @@ document.
 
 
     // ------------------------------
-    let gandalf = document.getElementById("push-me");
+    let gandalf = document.getElementsByClassName("click-me");
     let audio = new Audio('./sons/Gandalf.mov');
     
     gandalf.addEventListener("click", () => {
         audio.play();
     });
+
+
+    // ---------------------------------
+
+    
+    // ---------------------------------
    
 class Carousel {
     /**

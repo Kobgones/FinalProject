@@ -92,7 +92,7 @@ body, html {
     border-radius: 50%;
     top: 50%;
     margin-top: -20px;
-    right: -20px;
+    right: 10px;
     box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
     cursor: pointer;
     transition: transform 0.3s, opacity 0.3s;
@@ -105,7 +105,7 @@ body, html {
   .carousel__prev {
     background-image: url(img/left.svg);
     right: auto;
-    left: -20px;
+    left: 10px;
   }
   
   .carousel__next--hidden, .carousel__prev--hidden {
@@ -143,6 +143,21 @@ body, html {
     }
   }
   
+#home #vid {
+  display: flex;
+  justify-content: center;
+  background-image: url(./img/mordor.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  backdrop-filter: blur(100%);
+
+}  
+
+#home #video {
+  margin: auto;
+  width: 90%;
+  height: 80%;
+}
 
 #fellowship {
     display: flex;
@@ -277,12 +292,16 @@ body, html {
 }
 
 .card-actions button {
-    border-radius: 40%;
-    border: 0;
-    font-weight: bold;
-    width: 5%;
-    background-color: aliceblue;
-    color: rgb(211, 139, 13);
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  margin: auto;
+  height: 10%;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  width: 20%;
 }
 
 
@@ -294,11 +313,20 @@ body, html {
     margin-right: 10%;
 }
 
-#fellowship #push-me {
+#fellowship .click-me {
     position: absolute;
-    border-radius: 12%;
-    background-color: aliceblue;
-    border: solid salmon;
+    width: 15%;
+    left: 5%;
+    margin-top: -3%;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  height: 10%;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
 }
 
 
