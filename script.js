@@ -272,7 +272,7 @@ class Carousel {
   
     new Carousel(document.querySelector('#carousel1'), {
         slidesVisible: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 3,
         loop: true
     })
   
@@ -286,9 +286,96 @@ class Carousel {
 
 //-----------------------------------
 
-  let gandalf = document.getElementById("audio1");
-    let audio = new Audio('./sons/Gandalf.mov');
+  // let gandalf = document.getElementById("audio1");
+  //   let audio = new Audio('./sons/Gandalf.mov');
     
-    gandalf.addEventListener("click", () => {
+  //   gandalf.addEventListener("click", () => {
+  //       audio.play();
+  //   });
+
+
+  const audios = {
+    "audio1": "./sons/Gandalf.mov",
+    "audio2": "./sons/Frodon.mov",
+    "audio3": "./sons/Sam.mov",
+    "audio4": "./sons/Aragorn.mov",
+    "audio5": "./sons/Legolas.mov",
+    "audio6": "./sons/Gimli.mov",
+    "audio7": "./sons/Merry.mov",
+    "audio8": "./sons/Pippin.mov",
+    "audio9": "./sons/Boromir.mov",
+ }
+ for(let index in audios){
+    const myElem = document.getElementById(index);
+    myElem.addEventListener("click",()=>{
+       let audio = new Audio(audios[index])
+       audio.play();
+    })
+ }
+
+  //----------------------------------------------------
+
+  const divModalContents = {
+    "comte":{
+      "title" : "LA COMTÉ",
+      "description": "La Comté est la patrie des Hobbits. Elle est située dans le nord-ouest de la Terre du Milieu. Durant le Troisième Âge, elle est l'une des rares zones fortement peuplées d'Eriador. Contrairement à la croyance populaire, la Comté n'est pas le berceau d'enfance de Frodon Sacquet.",
+      "image" : "./img/mapconté.png"
+    }
+    ,
+    "rivendell" : {
+      "title": "RIVENDELL",
+      "description": "Fondcombe, aussi connue sous le nom d'Imladris (ou Rivendell en anglais), est une vallée des Monts Brumeux où réside un groupe d'Elfes sous l'autorité d'Elrond. Située en Terre du Milieu, cette grande cité elfique est décrit comme  en référence à Valinor, qui était à l'ouest de la Grande Mer à Aman.",
+      "image": "./img/maprivendell.png"
+    },
+    "moria":{
+      "title" : "LES MINES DE LA MORIA",
+      "description" : "Khazad-Dûm (khu. Demeure des Nains), et plus tard Moria, est la plus grande des cités du peuple Nain. Elle fut la plus prospère, et est la seule à produire du mithril en grande quantité.",
+      "image" : "./img/mapmoria.png"
+    }
+    ,
+    "helm" : {
+      "title": "GOUFFRE DE HELM",
+      "description": "En l'an 3019 T.A. , au début de la Guerre de l'anneau, suite aux batailles des Gués de Lisen, le roi Théoden de Rohan conduisit une armée de renfort mais fit retraite vers le Gouffre de Helm pour se réfugier de l'attaque imminente de l'armée de Saroumane. C'est là qu'eut lieu la Bataille de Fort-le-Cor, qui se termina par la victoire de Rohan grâce à l'arrivée de renforts menés par Erkenbrand et Gandalf, et aussi l’aide des Ents et des Huorns.",
+      "image": "./img/maphelm.png"
+    },
+    "orthanc":{
+      "title" : "ORTHANC",
+      "description" : "L'Isengard est un territoire situé au sud de l'Eriador et contenant la tour d'Orthanc.Après avoir été perverti par Sauron saroumane fit fortifié orthanc et constitua une armée d'Orques d'Huruk-hai et de wargs de près de 10000 hommes",
+      "image" : "./img/maporthanc.png"
+    }
+    ,
+    "mordor" : {
+      "title": "MORDOR",
+      "description": "Le Mordor était une région entouré de hautes montagnes infranchissables (l'Ephel Dúath et l'Ered Lithui) de tous côtés sauf à l'Est qui donnait sur le Rhûn et le Khand.C'est la que Sauron à forgé l'Anneau unique et ou il sera également détruit.La communauté passa  par plusieurs endroits emblématique du Mordor comme le plateau de Gorgoroth ou frodon et sam passerent pour aller détruire l'anneau à la montagne du destin.",
+      "image": "./img/mapmoria.png"
+    }
+    }
+  const modalContainer = document.querySelector(".modal-container");
+  const modalTriggers = document.querySelectorAll(".modal-trigger");
+  modalTriggers.forEach(trigger =>{
+    trigger.addEventListener("click", (e)=>{
+      let targetId = e.currentTarget.id
+      console.log(targetId)
+      document.getElementById("modalTitle").innerHTML = divModalContents[targetId].title
+      document.getElementById("modalDescription").innerHTML = divModalContents[targetId].description
+      document.getElementById("modalImage").innerHTML = divModalContents[targetId].image
+      modalContainer.classList.toggle("active");
+    })
+  })
+  const modalTrigers = document.querySelectorAll(".modal-trigger2");
+  modalTrigers.forEach(trigger =>
+    trigger.addEventListener("click", toggleModal));
+  function toggleModal(){
+    modalContainer.classList.toggle("active")}
+ 
+ //----------------------------------------------------
+ 
+ let gollum = document.getElementById("smeagol");
+    let audio = new Audio('./sons/audio10.mov');
+   
+    gollum.addEventListener("click", () => {
         audio.play();
-    });
+      });
+//-------------------------------------------------------
+ 
+ 

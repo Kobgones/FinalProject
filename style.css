@@ -22,12 +22,38 @@ header h1{
   text-align: center; 
   color: gold;
   height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
+
+  animation-name: focus-in-contract;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+    
+  /* shorthand
+  animation: focus-in-contract 1s ease 0s 1 normal none;*/
 }
+@keyframes focus-in-contract {
+    
+  0% {
+    letter-spacing:1em;
+    filter:blur(12px);
+    opacity:0;
+  }
+  100% {
+    filter:blur(0);
+    opacity:1;
+  }
+} 
 
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
 }
 
 header.sticky {
@@ -46,38 +72,53 @@ ul{
 
 li a{
   color: gold;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
+  
 }
 
 li {
   list-style-type: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
+
 }  
 section{
     height: 100vh;
   }
+  
+/* ----------section home------------------------ */
 
- 
+#home {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
+
+}
   
 #home #vid {
   display: flex;
   justify-content: center;
   background-size: 100%;
-  backdrop-filter: blur(100%);
-margin: auto;
+  
 }  
 
 #home #video {
   margin: auto;
-  width: 90%;
-  
+  width: 100%; 
 }
+
+/* -----------section fellowship--------------------------- */
 
 #fellowship {
   scroll-margin-top: 29px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(./img/sauron.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+#fellowship h2:first-child, h4{
+    text-align: center;
   }
 
 .card {
@@ -148,6 +189,7 @@ margin: auto;
     left: 0;
     opacity: 1;
     visibility: visible;
+    transform: rotate(360deg);
 }
 
 .card .content h2 {
@@ -229,21 +271,24 @@ margin: auto;
 
 #fellowship .click-me button{
   position: absolute;
-  width: 15%;
-  left: 5%;
-  margin-top: -3%;
+  width: 30px;
+  left: 85%;
   font-size: 16px;
   font-weight: 600;
   color: black;
   cursor: pointer;
-  height: 10%;
+  height: 30px;
   text-align:center;
   border: none;
   background-size: 300% 100%;
+  background-image: url(./img/icons8-une-bague-48.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 50px;
 }
 
-/* ---------------- */
+/* -----------section quest---------------------- */
 
 #quest{
   scroll-margin-top: 29px;
@@ -337,7 +382,8 @@ CAROUSEL
 }
 
 .carousel__next:hover, .carousel__prev:hover {
-  transform: scale(1.2)
+  transform: scale(1.2);
+  transform: rotate(360deg);
 }
 
 .carousel__prev {
@@ -381,7 +427,151 @@ CAROUSEL
   }
 }
 
-footer{
-    height: 200px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
-  }
+.modal-btn {
+  padding: 10px 14px;
+  font-size: 20px;
+  display: block;
+  min-width: 150px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: ease-out 0.3s;
+  outline: none;
+  border: 4px solid gold;
+  height: 55px;
+  width: 70px;
+}
+.modal-btn:hover {
+  color: gold;
+  cursor: pointer;
+}
+.modal-btn::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: gold;
+}
+.modal-btn:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
+}
+.modal-container {
+ visibility: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: visibility 0.4s;
+  display: flex;
+  justify-content: flex-start;
+}
+.active {
+  transition: visibility 0s;
+   visibility: visible;
+  z-index: 100;
+}
+.map-img {
+  height: 250px;
+  width: 95%;
+}
+.map-img:hover{
+  top: -50px;
+  transform: scale(1.5);
+  border: 1px solid rgba(59,58,58,0.46);
+  box-shadow: -10px 5px 10px grey;
+  top: 0;
+  transition: transform 200ms;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333333d3;
+}
+.modal {
+  width: 95%;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.close-modal {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: black;
+  color: gold;
+}
+.modal h3 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.modal p {
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+
+/* ------------------section team------------------ */
+
+#team {
+  scroll-margin-top: 29px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.872), rgba(0, 0, 0, 0.751));
+
+}
+
+#team h2:first-child{
+  text-transform: uppercase;
+  color: #FFF;
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+
+#team img {
+  width: 100%;
+  height: 100vh;
+}
+
+/* -------------footer----------------------- */
+
+footer {
+  height: 5%;
+  position: absolute;
+}
+
+  .foot{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+#fellow {
+  width: 20%;
+  height: 35%;
+}
+#ring {
+  width: 1%;
+  height: 10%;
+}
+#smeagol {
+  width: 2%;
+  height: 15%;
+}
