@@ -226,13 +226,26 @@ section{
         font-size: initial;
     }
 
+    .modal {
+      width: 95%;
+      max-width: 500px;
+      min-width: 300px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 5px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     #team {
       display: initial;
       justify-content: initial;
       align-items: initial;
       padding-top: 11%;
     }
-    
+
 
     footer a {
       background-color: #232323;
@@ -520,8 +533,8 @@ CAROUSEL
   background: #333333d3;
 }
 .modal {
-  width: 95%;
-  max-width: 500px;
+  width: auto;
+  max-width: 90%;
   min-width: 300px;
   padding: 30px;
   background: #fff;
