@@ -323,7 +323,7 @@ class Carousel {
     }
     ,
     "rivendell" : {
-      "title": "RIVENDELL",
+      "title": "FONCOMBE",
       "description": "Fondcombe, aussi connue sous le nom d'Imladris (ou Rivendell en anglais), est une vallée des Monts Brumeux où réside un groupe d'Elfes sous l'autorité d'Elrond. Située en Terre du Milieu, cette grande cité elfique est décrit comme  en référence à Valinor, qui était à l'ouest de la Grande Mer à Aman.",
       "image": "./img/maprivendell.png"
     },
@@ -339,7 +339,7 @@ class Carousel {
       "image": "./img/maphelm.png"
     },
     "orthanc":{
-      "title" : "ORTHANC",
+      "title" : "ISENGARD",
       "description" : "L'Isengard est un territoire situé au sud de l'Eriador et contenant la tour d'Orthanc.Après avoir été perverti par Sauron saroumane fit fortifié orthanc et constitua une armée d'Orques d'Huruk-hai et de wargs de près de 10000 hommes",
       "image" : "./img/maporthanc.png"
     }
@@ -378,4 +378,11 @@ class Carousel {
       });
 //-------------------------------------------------------
  
+let rohan = document.getElementById("fellow");
+    let audiob = new Audio('./sons/audio11.mov');
+   
+    rohan.addEventListener("click", () => {
+        audiob.play();
+      });
+      
  
